@@ -1,11 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Counter = (props) => {
-  console.log(props);
+const Counter = ({ inc, dec, reset, count }) => {
   return (
     <div>
-      <p>Counter:{props.count || 90}</p>
-      <p>{props.children}</p>
+      <h1>{count}</h1>
+      <button onClick={inc}>+</button>
+      <button onClick={dec}>-</button>
+      <br />
+      <button onClick={reset}>reset</button>
     </div>
   );
 };
@@ -13,5 +16,10 @@ const Counter = (props) => {
 // Counter.defaultProps = {
 //   count: 25,
 // };
-
+Counter.propTypes = {
+  inc: PropTypes.func,
+  dec: PropTypes.func,
+  reset: PropTypes.func,
+  count: PropTypes.number,
+};
 export default Counter;

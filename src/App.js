@@ -1,15 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./app.css";
 import Counter from "./components/Counter";
 
 const App = () => {
+  const [count, setCount] = useState(0);
+
+  // const changeCount = () => {
+  //   setCount(5);
+  // };
+
+  const increaseCount = () => {
+    setCount(count + 1);
+  };
+
+  const decreaseCount = () => {
+    setCount(count - 1);
+  };
+
+  const resetCount = () => {
+    setCount(0);
+  };
   return (
     <div className="app">
-      <h1>Random Number</h1>
+      <header>
+        <h1>Random Number</h1>
+      </header>
       <br />
-      <Counter count={5} />
-      <Counter myArray={[1, 2, 3]} firstName="Shadi" />
-      <Counter count={20}>This is my counter</Counter>
+      <Counter
+        inc={increaseCount}
+        dec={decreaseCount}
+        reset={resetCount}
+        count={count}
+      />
     </div>
   );
 };
