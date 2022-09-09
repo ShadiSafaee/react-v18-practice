@@ -14,6 +14,9 @@ const App = () => {
   };
 
   const decreaseCount = () => {
+    if (count === 0) {
+      return alert("No more minus please!");
+    }
     setCount(count - 1);
   };
 
