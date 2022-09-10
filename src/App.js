@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./app.css";
+// import "./app.css";
 import Counter from "./components/Counter";
+import styles from "./App.module.css";
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -24,8 +25,8 @@ const App = () => {
     setCount(0);
   };
   return (
-    <div className="app">
-      <header>
+    <div className={styles.App}>
+      <header className={styles.AppHeader}>
         <h1>Random Number</h1>
       </header>
       <br />
